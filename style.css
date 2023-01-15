@@ -1,6 +1,7 @@
 *{
     font-family: 'Abhaya Libre', serif;
     font-size: 14px;
+    color: #00091F;
 }
 h1 {
     font-weight: 800;
@@ -12,6 +13,7 @@ h2 {
 }
 h6 {
     font-size: 16px;
+    margin: 0;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -133,7 +135,7 @@ input {
 }
 /* PAGINA TODO*/
 #taskPages {
-    background-color: rgb(224, 240, 245) !important;
+    background-color: rgb(240, 245, 247) !important;
 }
 .titleAPP {
     position: relative;
@@ -180,4 +182,76 @@ input {
 }
 .icon {
     font-size: larger;
+}
+/* PAGE SETTINGS */
+#taskPages {
+    display: block;
+}
+.mainConfig {
+    margin: 5%;
+    margin-top: 10%;
+}
+#profilePic {
+    height: auto;
+    width: 18%;
+    border-radius: 25%;
+}
+.profile {
+    width: 100%;
+    height: 65px;
+    border-radius: 17px;
+    padding: 8px 25px 10px 10px;
+    background-color: #185BFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    margin-top: 16px;
+
+}
+p {
+    margin: 0;
+}
+#name {
+    margin: 0;
+    margin: 10px;
+    color: white;
+}
+#nameEpic {
+    display: flex;
+    align-items: center;
+}
+.md-noturno {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.form-switch {
+    font-size: 20px;
+}
+.info {
+    font-size: 10px;
+}
+.opcoes {
+    height: 25px;
+    margin: 15px;
+}
+.github {
+    margin-top: 20px;
+}
+.github > a {
+    color: #042370;
+}
+.aviso {
+    color: #AE2323;
+}
+.aviso > .info {
+    color: #e79494;
+
+}
+.taskTitle {
+    font-family: 'Aclonica', sans-serif !important;
+    font-size: 16px;
+    text-align: center;
 }
