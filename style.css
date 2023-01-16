@@ -1,3 +1,16 @@
+@keyframes shake {
+    25%{
+        transform: translateX(4px);
+    }
+    50%{
+        transform: translateX(-4px);
+    }
+    100%{
+        transform: translateX(4px);
+    }
+}
+
+
 *{
     font-family: 'Abhaya Libre', serif;
     font-size: 14px;
@@ -15,6 +28,7 @@ h6 {
     font-size: 16px;
     margin: 0;
 }
+
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     font-size: 14px;
@@ -92,7 +106,9 @@ input {
 #newPasswordHelpBlock { /* Mudar quando as senhas nao bater forem iguais*/
     display: none;
 }
-
+#WrongHelpBlock { /* Mudar a senha ou user do login estiverem incorretos*/
+    display: none;
+}
 #forgotPhrase {
     text-align: left;
     padding-top: 12px;
@@ -163,6 +179,7 @@ input {
     background-color: white;
     bottom: 0;
     border-radius: 40% 40% 0px 0px;
+    position: fixed;
 }
 .btnOpt {
     border:none;
@@ -248,10 +265,13 @@ p {
 }
 .aviso > .info {
     color: #e79494;
-
 }
 .taskTitle {
     font-family: 'Aclonica', sans-serif !important;
     font-size: 16px;
     text-align: center;
+}
+.opcoes > h6 > a {
+    font-size: 16px;
+    color: #00091F;
 }
