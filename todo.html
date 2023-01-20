@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500;600;800&family=Aclonica&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+
     <title>Boas vindas</title>
 </head>
 <body id="taskPages">
@@ -19,10 +21,23 @@
             <div class="titleAPP taskTitle" >
                 <h2>A FAZER</h2>
             </div>
-            <div class="tasks">
-                
+            <div class="tasks"></div>
+            <div class="addTask">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="newTask">
+                <div class="headerClose">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <input placeholder="Titulo" id="titleTask" class="form-control"></input>
+                <textarea type="text" placeholder="Descrição" id="descriptionTask" class="form-control"></textarea>
+                <div class="RemoveAccept">
+                    <button><i class="fa-solid fa-trash-can"></i></button>
+                    <button onclick="incluirTarefa()"><i class="fa-solid fa-check"></i></button>
+                </div>
             </div>
     </main>
+
     <section class="menuOptions">
         <div class="menuBtn">
             <button class="btnOpt to-do" onclick="location.href = 'todo.html';"><i class="icon fa-solid fa-list-ul"></i>To-do</button>

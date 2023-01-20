@@ -156,7 +156,6 @@ input {
 .titleAPP {
     position: relative;
     top: 40px;
-    text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -200,6 +199,70 @@ input {
 .icon {
     font-size: larger;
 }
+.addTask {
+    position: absolute;
+    bottom: 90px;
+    right: 10%;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.20);
+    background-color: #BAD0E7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(0.12turn);
+}
+.addTask i {
+    color: #AE2323;
+    transform: rotate(0.12turn);
+}
+.newTask {
+    background-color: #FAFAFA;
+    z-index: 999999999;
+    position: absolute;
+    height: 60%;
+    width: 90%;
+    bottom: 22%;
+    left: 5%;
+    border-radius: 10px;
+    box-shadow:4px 4px 5px 1px rgba(0,0,0,0.20);
+    padding: 5% 5% 5% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#descriptionTask {
+    height: 40%;
+    border-radius: 17px;
+}
+.RemoveAccept {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.headerClose {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+.RemoveAccept button {
+    border: none;
+    background-color: #E8EEF3;
+    padding: 7px 10px 7px 10px;
+    border-radius: 5px;
+}
+.fa-trash-can{
+    color: red;
+}
+.fa-check {
+    color: green;
+}
+
+
+
 /* PAGE SETTINGS */
 #taskPages {
     display: block;

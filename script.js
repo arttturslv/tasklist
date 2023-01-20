@@ -108,7 +108,7 @@ function Cadastrar() {
                 keyWordCad: inputKey.value,
                 nightmode: false,
                 profilePic: "base64String",
-                tasks: {
+                tasks:  {
                     taskItem: [ { title: "", description: "", active: true },
                                 { title: "", description: "", active: true }, 
                                 { title: "", description: "", active: false },
@@ -162,7 +162,10 @@ function Entrar() {
 
     if((usernameLogin.value == userValid.user) && (passwordLogin.value == userValid.senha)) {
         let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2)
-        localStorage.setItem('token', token); //apenas pra ver se o usuario está logado.
+        let dado = {"token": token, 
+                    "user": userValid.user}
+        localStorage.setItem('token', JSON.stringify(dado)); //apenas pra ver se o usuario está logado.
+        window.location.href = "todo.html";
     } 
     else {
         usernameLogin.setAttribute('style', 'border-color:red')      
@@ -171,22 +174,134 @@ function Entrar() {
     }
 }
 
-
 function Sair() {
     localStorage.removeItem('token');
     window.location.href = "start.html";
 }
+VerificaLogin();
 function VerificaLogin() { //botar no body onload das paginas que precisam estar logadas, todo, todone, setting
-    if(localStorage.getItem('token') == null) {
-        alert("voce precisa estar logado para acessar");
-        window.location.href = "start.html";
+    let url_atual = window.location.href;
+    if(localStorage.getItem('token') == null) { //nao tem token, logo não está logado entao nao entra nas listas.
+        if(url_atual.indexOf("todo") > -1 || url_atual.indexOf("todone") > -1  || url_atual.indexOf("setting") > -1 ) {
+            alert("Você precisa estar logado para acessar.");
+            window.location.href = "start.html";        
+        }
+    }
+    if(localStorage.getItem('token') != null) { //tem token, logo está logado entao nao entra nos logins.
+        if(url_atual.indexOf("start") > -1 || url_atual.indexOf("signUp") > -1  || url_atual.indexOf("signIn") > -1 ) {
+            window.location.href = "todo.html";
+        }
+
     }
 }
 
 
+/*
+SETTINGS */
+let url_atual = window.location.href;
+if(url_atual.indexOf("setting") > -1) {
+    
+
+let usuarioAtivo = JSON.parse(localStorage.getItem('token'));
+document.getElementById("name").innerHTML = usuarioAtivo.user;
+// feitas, ainda nao implementadas para evitar excluir antes de poder adicionar
+function apagaTodasTarefas() {
+    let listaUser =  JSON.parse(localStorage.getItem('listaUser'));
+    
+    listaUser.forEach(item => {
+        console.log(usuarioAtivo.user)
+        console.log(item.userCad)
+
+        if(usuarioAtivo.user == item.userCad) {
+            let tk = item.tasks.taskItem;
+            console.log(tk)
+            tk = tk.filter(tk => tk.active == true && tk.active == false);
+            console.log(tk)
+        }
+    })
+    localStorage.setItem('listaUser', JSON.stringify(listaUser)); //apenas pra ver se o usuario está logado.
+}
+function apagasTarefasConcluidas() {
+    let listaUser =  JSON.parse(localStorage.getItem('listaUser'));
+    
+    listaUser.forEach(item => {
+        console.log(usuarioAtivo.user)
+        console.log(item.userCad)
+
+        if(usuarioAtivo.user == item.userCad) {
+            let tk = item.tasks.taskItem;
+            console.log(tk)
+            tk = tk.filter(tk => tk.active == true);
+            console.log(tk)
+        }
+    })
+    localStorage.setItem('listaUser', JSON.stringify(listaUser)); //apenas pra ver se o usuario está logado.
+}
 
 
+} /* todo */
 
+
+  
+function incluirTarefa () {
+    let titulo = document.getElementById("titleTask");
+    let descricao = document.getElementById("descriptionTask");
+    console.log(titulo.value);
+    console.log(descricao.value);
+    let listaUser = JSON.parse(localStorage.getItem('listaUser'));
+    console.log(listaUser)
+
+    let obj = {
+        title: titulo.value,
+        description: descricao.value,
+        active: true
+       };
+    
+    let obj2 = [0].listaUser;
+    console.log(obj2)
+    console.log(listaUser)
+
+}
+
+let fecharIcon = document.querySelector(".headerClose")
+let abrirIcon = document.querySelector(".addTask")
+let lixeiraIcon = document.querySelector(".fa-trash-can")
+let aba = document.querySelector(".newTask")
+aba.style.display = "none"
+
+fecharIcon.addEventListener('click', function () {
+    aba.style.display = "none"
+})
+lixeiraIcon.addEventListener('click', function () {
+    aba.style.display = "none"
+})
+abrirIcon.addEventListener('click', function () {
+    aba.style.display = "block"
+})
+
+
+/*
+userValid = 
+
+
+        let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
+
+            listaUser.push( {
+                userCad: inputUsername.value,
+                passwordCad: inputPassword.value,
+                keyWordCad: inputKey.value,
+                nightmode: false,
+                profilePic: "base64String",
+                tasks: {
+                    taskItem: [ { title: "", description: "", active: true },
+                                { title: "", description: "", active: true }, 
+                                { title: "", description: "", active: false },
+                              ] 
+                       }
+            })
+            localStorage.setItem('listaUser', JSON.stringify(listaUser));
+
+*/
 
 
 

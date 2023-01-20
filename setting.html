@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500;600;800&family=Aclonica&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+
     <title>Boas vindas</title>
 </head>
 <body id="taskPages">
@@ -22,7 +24,7 @@
             <img id="profilePic" src="https://mir-s3-cdn-cf.behance.net/user/276/16ce7c1168715513.61ec21981f956.jpg">
             <h6 id="name">Ojuão</h6>
         </span>
-        <p><i class="icon fa-solid fa-arrow-right-from-bracket"></i></p>
+        <p onclick="Sair()"><i class="icon fa-solid fa-arrow-right-from-bracket"></i></p>
     </div>
     <h6 id="googlePhrase">------------ Acessibilidade ------------</h6>
     <div class="acessibilidade">
@@ -31,7 +33,7 @@
                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
             </div>
         </div>
-        <div class="opcoes">
+        <div class="opcoes" onclick="apagaTodasTarefas()">
             <h6>Apagar todas as tarefas</h6>
             <p class="info">Apaga todas as tarefas, concluidas ou não.</p>
         </div>
@@ -67,4 +69,6 @@
     </section>
 
 </body>
+<script>
+</script>
 </html>
