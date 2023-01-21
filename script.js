@@ -200,7 +200,6 @@ function VerificaLogin() { //botar no body onload das paginas que precisam estar
 SETTINGS */
 let url_atual = window.location.href;
 if(url_atual.indexOf("setting") > -1) {
-    
 
 let usuarioAtivo = JSON.parse(localStorage.getItem('token'));
 document.getElementById("name").innerHTML = usuarioAtivo.user;
@@ -239,28 +238,29 @@ function apagasTarefasConcluidas() {
 }
 
 
-} /* todo */
+} 
+/* todo */
 
-
-  
 function incluirTarefa () {
     let titulo = document.getElementById("titleTask");
     let descricao = document.getElementById("descriptionTask");
-    console.log(titulo.value);
-    console.log(descricao.value);
     let listaUser = JSON.parse(localStorage.getItem('listaUser'));
-    console.log(listaUser)
 
-    let obj = {
-        title: titulo.value,
-        description: descricao.value,
-        active: true
-       };
-    
-    let obj2 = [0].listaUser;
-    console.log(obj2)
-    console.log(listaUser)
-
+    if (titulo.value =="") {
+        console.log("Foiu")
+        document.querySelector("#titleTask").style.border = "solid thin red";
+        setTimeout(function () {
+            document.querySelector("#titleTask").style.border = "solid thin #dee2e6";
+        }, 300)
+    } else {
+        listaUser[0].tasks.taskItem.push({
+            title: titulo.value,
+            description: descricao.value,
+            active: true
+        })
+        localStorage.setItem('listaUser', JSON.stringify(listaUser))
+        location.reload()
+    }
 }
 
 let fecharIcon = document.querySelector(".headerClose")
@@ -276,7 +276,7 @@ lixeiraIcon.addEventListener('click', function () {
     aba.style.display = "none"
 })
 abrirIcon.addEventListener('click', function () {
-    aba.style.display = "block"
+    aba.style.display = "flex"
 })
 
 
