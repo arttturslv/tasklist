@@ -7,43 +7,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/354216b200.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="icon.png" type="image/png">   
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Boas vindas</title>
+    <title>Resetar senha</title>
 </head>
+
 <body>
-    <div class="return" onclick="location.href = 'signIn.html';">
+    <header class="return" onclick="location.href = 'signIn.html';">
         <i class="fa-solid fa-arrow-left"></i>
-    </div>
+    </header>
+
     <main>
         <div class="principal">
-
             <div class="titles">
                 <h1>Recuperar</h1>
             </div>
             <div class="descriptions">
                 <h6>Apenas digite seu nome de usuario e a chave de recuperação</h6>
             </div>
-
             <div class="forms">
                 <label for="inputUsername" class="form-label"></label>
                 <input type="username" placeholder="nome de usuario" id="inputUsername" class="form-control" aria-describedby="usernameHelpBlock">
-                    <div id="usernameHelpBlock" class="form-text">Esse nome de usuario já foi cadastrado.</div>
+                    <div id="recuperacaoHelpBlock" class="form-text">Nome de usuario e/ou chave incorretas</div>
                 </input>
                 <label for="inputKey" class="form-label"></label>
                 <input type="key" placeholder="chave de recuperação" id="inputKey" class="form-control" aria-describedby="keyHelpBlock">
-                    <div id="keyHelpBlock" class="form-text">A chave de recuperação deve ter apenas letras e deve ser maior que 4 caracteres.</div>
                 </input>
             </div>
-
-            <div class="verificar">
+            <div class="verificar" onclick="verificaRecuperacao()">
                 <button type="button" class="btn btn-primary">Verificar</button>
             </div>
-
         </div>
-
-
-        
-        </main>
+    </main>
+    
     <section>
         <span class="askPhrase">
             <h6 > Já tem uma conta?<a href="signIn.html"> Entrar</a> </h6>

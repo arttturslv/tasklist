@@ -54,11 +54,14 @@ body {
 a {
     text-decoration: none;
 }
-main {
+
+ /* controla os textos principais
+ 
+ main {
     width: 100%;
     height: 100%;
  }
- /* controla os textos principais*/
+ */
 .principal {
     text-align:center;
     width: 90%;
@@ -97,6 +100,9 @@ input {
 #usernameHelpBlock { /* Mudar quando o username ja tiver no cadastro*/
     display: none;
 }
+#usernameHelpBlock2 { /* Mudar quando o username ja tiver no cadastro*/
+    display: none;
+}
 #passwordHelpBlock { /* Mudar quando a senha nao bater com os requisitos*/
     display: none;
 }
@@ -113,6 +119,9 @@ input {
     text-align: left;
     padding-top: 12px;
     margin: 0;
+}
+#recuperacaoHelpBlock {
+    display: none;
 }
 .Entrar {
     padding-top: 12px;
@@ -148,6 +157,9 @@ input {
     border-radius: 12px;
     margin-left: 30px;
     margin-top: 30px;
+    height: 30px;
+    left: 10px;
+    position: absolute;
 }
 /* PAGINA TODO*/
 #taskPages {
@@ -164,7 +176,6 @@ input {
     width: 80%;
     box-shadow: -2px 27px 36px -11px rgba(0,0,0,0.18);
     border-radius: 17px;
-    text-align:center;
     left: 50%;
     transform: translate( -50%);
 }
@@ -261,7 +272,53 @@ input {
     color: green;
 }
 
+#allTasks {
+    top: 80px;
+    position: relative;
+    width: 90%;
+    left: 5%;
+    
+}
+#task {
+    border-bottom: solid thin #dee2e6;
+    display: flex;
+    flex-wrap:nowrap;
+}
+.tarefa {
+    text-align: left;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    width: 80%;
+    
+}
+.tarefa h3 {
+    width: 90%;
+    font-weight: 800;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.tarefa p {
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
+.botaoConcluido {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.btnConcluido {
+    font-size: 24px;
+}
+
+/* todone*/
+.allTasksFalse {
+    opacity: 0.3;
+}
 
 /* PAGE SETTINGS */
 #taskPages {
@@ -270,6 +327,10 @@ input {
 .mainConfig {
     margin: 5%;
     margin-top: 10%;
+    height: 100%;
+}
+html {
+    height: 100%;
 }
 #profilePic {
     height: auto;

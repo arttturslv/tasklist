@@ -4,61 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500;600;800&family=Aclonica&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/354216b200.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500;600;800&family=Aclonica&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="icon.png" type="image/png">   
+    <script defer src="script.js"></script> 
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-
-    <title>Boas vindas</title>
+    <title>Configurações</title>
 </head>
-<body id="taskPages">
-    <div class="mainConfig">
-    <h3 class="taskTitle">Configurações</h3>
 
-    <div class="profile">
-        <span id="nameEpic"> 
-            <img id="profilePic" src="https://mir-s3-cdn-cf.behance.net/user/276/16ce7c1168715513.61ec21981f956.jpg">
-            <h6 id="name">Ojuão</h6>
-        </span>
-        <p onclick="Sair()"><i class="icon fa-solid fa-arrow-right-from-bracket"></i></p>
-    </div>
-    <h6 id="googlePhrase">------------ Acessibilidade ------------</h6>
-    <div class="acessibilidade">
-        <div class="opcoes md-noturno"><h6>Modo noturno</h6>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+<body id="taskPages" onload="VerificaLogin()">
+    <main class="mainConfig">
+        <h3 class="taskTitle">Configurações</h3>
+        <div class="profile">
+            <span id="nameEpic"> 
+                <img id="profilePic" src="https://mir-s3-cdn-cf.behance.net/user/276/16ce7c1168715513.61ec21981f956.jpg">
+                <h6 id="name">Ojuão</h6>
+            </span>
+            <p onclick="Sair()"><i class="icon fa-solid fa-arrow-right-from-bracket"></i></p>
+        </div>
+        <h6 id="googlePhrase">------------ Acessibilidade ------------</h6>
+        <div class="acessibilidade">
+            <div class="opcoes md-noturno"><h6>Modo noturno</h6>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                </div>
+            </div>
+            <div class="opcoes" onclick="apagaTodasTarefas()">
+                <h6>Apagar todas as tarefas</h6>
+                <p class="info">Apaga todas as tarefas, concluidas ou não.</p>
             </div>
         </div>
-        <div class="opcoes" onclick="apagaTodasTarefas()">
-            <h6>Apagar todas as tarefas</h6>
-            <p class="info">Apaga todas as tarefas, concluidas ou não.</p>
+        <h6 id="googlePhrase">------------ Segurança ------------</h6>
+        <div class="segurança">
+            <div class="opcoes">
+                <h6><a href="resetPass.html">Trocar de senha</a></h6>
+            </div>
+            <div class="opcoes aviso">
+                <h6 onclick="apagaConta()">Apagar conta</h6>
+                <p class="info">A conta será apagada para sempre e todas informações deletadas.</p>
+            </div>
         </div>
-    </div>
-    <h6 id="googlePhrase">------------ Segurança ------------</h6>
+        <h6 id="googlePhrase">------------ Sobre ------------</h6>
+        <div class="sobre">
+            <p class="info">
+                Este aplicativo foi criado a partir de uma pagina web, apenas com o proposito de testar a funcionalidade e estudar conceitos de desenvolvimento web.<br>
+                Apesar de salvar as informações, elas ficam salvas apenas no dispositivo temporariamente, logo, caso o aplicativo seja desinstalado ou a conta apagada, as informações serão perdidas.
+            </p>
+            <h6 class="github"><a href="https://github.com/Laporttte/tasklist">Github do projeto: Tasklist</a></h6>
+        </div>
+    </main>
 
-    <div class="segurança">
-        <div class="opcoes">
-            <h6><a href="resetPass.html">Trocar de senha</a></h6>
-        </div>
-        <div class="opcoes aviso">
-            <h6>Apagar conta</h6>
-            <p class="info">A conta será apagada para sempre e todas informações deletadas.</p>
-        </div>
-    </div>
-    <h6 id="googlePhrase">------------ Sobre ------------</h6>
-
-    <div class="sobre">
-        <p class="info">
-            Este aplicativo foi criado a partir de uma pagina web, apenas com o proposito de testar a funcionalidade e estudar conceitos de desenvolvimento web.<br>
-            Apesar de salvar as informações, elas ficam salvas apenas no dispositivo temporariamente, logo, caso o aplicativo seja desinstalado ou a conta apagada, as informações serão perdidas.
-        </p>
-        <h6 class="github"><a href="https://github.com/Laporttte/tasklist">Github do projeto: Tasklist</a></h6>
-    </div>
-</div>
     <section class="menuOptions">
         <div class="menuBtn">
             <button class="btnOpt to-do" onclick="location.href = 'todo.html';"><i class="icon fa-solid fa-list-ul"></i>To-do</button>
@@ -67,8 +66,5 @@
                 <style> .settings {color: #185BFF;}</style>
         </div>
     </section>
-
 </body>
-<script>
-</script>
 </html>
